@@ -3,3 +3,12 @@
     background-size: cover;
     height: 50vh;
 }
+
+.page-footer {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.icon-footer {
+    padding: 5px;
+}

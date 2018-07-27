@@ -1,9 +1,3 @@
-.img-jumbotron {
-    background-image: url("../img/logo.jpg");
-    background-size: cover;
-    height: 50vh;
-}
-
 .page-footer {
     padding-right: 0px;
     padding-left: 0px;
@@ -12,3 +6,25 @@
 .icon-footer {
     padding: 5px;
 }
+
+.bgimage {
+    width:100%;
+    height:100vh;
+    background: url('../img/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed;
+  }
+
+  .bgimage h1 {
+    color:white;
+    text-shadow:2px 2px #333;
+  }
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }

@@ -13,3 +13,5 @@ Its a website! Node/npm
 \#F591AB
 
 \#865897
+
+\#06061D

@@ -1,9 +1,5 @@
-.page-footer {
-    padding-right: 0px;
-    padding-left: 0px;
-}
-
 .icon-footer {
+	padding:  2%;
     padding: 2vh;
 }
 
@@ -32,4 +28,33 @@
 .navbar-transparent {
 	background-color: transparent;
 	border-color: rgba(255,255,255,0.4);
+}
+
+.cenMain {
+	padding-top: 20%;
+	padding-bottom: 20%;
+	padding-top: 20vh;
+	padding-bottom: 20vh;
+    width: 60%;
+    margin: auto;
+    
+}
+
+.container-cenMain {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.code {
+	background-color: #161038;
+}
+
+.text-yellow {
+	text-emphasis-color: yellow;
+}
+
+.card {
+	background-color: rgba(0, 0, 0, 0.1) !important;
 }

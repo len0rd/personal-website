@@ -1,0 +1,1 @@
+echo "Building HTML partials from markdown"

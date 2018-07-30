@@ -1,3 +1,4 @@
+const PORT = 8090;
 var express = require('express');
 var app = express();
 
@@ -10,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/assets'));
 
 app.get(/\/.*/, function(req, res) {
-    console.log(req.path);
+    console.log('Request for page: ' + req.path);
     let pathname = 'pages' + req.path;
 
     if ((pathname)[pathname.length - 1] === '/') {
@@ -20,4 +21,4 @@ app.get(/\/.*/, function(req, res) {
     res.render(pathname);
 });
 
-app.listen(8090);
+app.listen(PORT);

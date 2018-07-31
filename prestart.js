@@ -9,16 +9,16 @@ var showdown  = require('showdown'),
     converter = new showdown.Converter(),
     fs        = require('fs'),
     mkdirp    = require('mkdirp'),
-    inputDir  = './md_writeup/',
+    inputDir  = './project_writeups/',
     outputDir = './views/partials/md/';
 
-mkdirp(outputDir, function(err){
+mkdirp(outputDir, (err) => {
     if (err) {
         console.error(err);
     } else {
         console.log('output dir created');
     }
-})
+});
 
 fs.readdir(inputDir, (err, files) => {
     files.forEach(file => {

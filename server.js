@@ -11,14 +11,26 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/assets'));
 
 app.get(/\/.*/, function(req, res) {
-    console.log('Request for page: ' + req.path);
     let pathname = 'pages' + req.path;
-
-    if ((pathname)[pathname.length - 1] === '/') {
-        pathname += 'index';
+    let page = pathname.substr(pathname.lastIndexOf('/') + 1);
+    
+    if (pathname !== null && pathname !== undefined) {
+        if ((pathname)[pathname.length - 1] === '/') {
+            pathname += 'index';
+            page = 'index';
+        }
+        if (pathname.includes('projects') && page !== 'index') {
+            // projects has a custom template that is used for all projects
+            // so we need to change the pathname that the renderer is using
+            // to that template:
+            pathname = pathname.substr(0, pathname.lastIndexOf(page));
+            pathname += 'project_template'
+            page = 'partials/md/' + page;
+        }
     }
+    console.log('request for path: ' + pathname + ', and page: ' + page);
 
-    res.render(pathname);
+    res.render(pathname, {"page": this.page});
 });
 
 app.listen(PORT);

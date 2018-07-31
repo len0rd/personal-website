@@ -2,7 +2,7 @@ const PORT = 8090;
 var express = require('express');
 var app = express();
 
-console.log('Hello');
+console.log('Starting express server');
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');

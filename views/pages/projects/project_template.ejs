@@ -1,20 +1,29 @@
+<% var rootPath = '../../'; %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<% include ../../partials/include %>
+	<%- include(rootPath + 'partials/include') %>
+	<link rel="stylesheet" type="text/css" href="/css/projects.css">
 </head>
 
 <body>
 	<header>
-		<% include ../../partials/nav %>
+		<%- include(rootPath + 'partials/nav') %>
 	</header>
 
-	<div class="container">
-		<% include(page) %>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-3">
+				<!-- scroll spy goes here -->
+			</div>
+			<div class="col-9 mt-5 pt-5 pb-5">
+				<%- include(rootPath + page) %>
+			</div>
+		</div>
 	</div>
 
-	<% include ../../partials/footer %>
-	<% include ../../partials/post_html_include %>
+	<%- include(rootPath + 'partials/footer') %>
+	<%- include(rootPath + 'partials/post_html_include') %>
 </body>
 </html>

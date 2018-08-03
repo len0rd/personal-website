@@ -3,7 +3,6 @@ var $document = $(document),
     navbarDef = 'bg-dark',
     effect = 'fadeInDown';
 
-console.log('waddup');
 if (window.location.pathname ==='/') {
     $document.scroll(function() {
         //if >100 pixels have been scrolled

@@ -30,7 +30,7 @@ app.get(/\/.*/, function(req, res) {
     }
     console.log('request for path: ' + pathname + ', and page: ' + page);
 
-    res.render(pathname, {"page": this.page});
+    res.render(pathname, {"page": page});
 });
 
 app.listen(PORT);

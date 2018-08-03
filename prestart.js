@@ -16,15 +16,6 @@ const showdown  = require('showdown'),
 
 //handles adding classes to specific 
 //tag types automatically
-const bindings = Object.keys(classMap)
-    .map(key => ({
-        
-
-        type: 'output',
-        regex: new RegExp(`<${key}(.*?)>`, 'g'),
-        replace: `<${key} class="${classMap[key]}">`
-}));
-
 const addClass = {
     type: 'output',
     filter: text => {
@@ -47,8 +38,7 @@ const addClass = {
 };
 
 const converter = new showdown.Converter({
-    extensions: [addClass]//bindings]//,
-    // noHeaderId: false // important to add this, else regex match doesn't work
+    extensions: [addClass]
 });
 
 mkdirp(outputDir, (err) => {

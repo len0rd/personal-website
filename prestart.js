@@ -28,7 +28,7 @@ const addClass = {
                 console.log(matcher[0]);
 
                 var restOfTag = matcher[1];
-                modifiedText.replace(matcher[0], `<${key} class="${classMap[key]}" ${restOfTag}>`);
+                modifiedText = modifiedText.replace(matcher[0], `<${key} class="${classMap[key]}" ${restOfTag}>`);
 
                 matcher = regex.exec(modifiedText);
             }

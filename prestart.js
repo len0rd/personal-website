@@ -5,12 +5,51 @@
 // md changes), it is more efficient in 
 // that we aren't converting MD -> ejs
 // on EVERY request
-var showdown  = require('showdown'),
-    converter = new showdown.Converter(),
+const showdown  = require('showdown'),
     fs        = require('fs'),
     mkdirp    = require('mkdirp'),
     inputDir  = './project_writeups/',
-    outputDir = './views/partials/md/';
+    outputDir = './views/partials/md/',
+    classMap  = {
+        h1: 'display-1'
+    };
+
+//handles adding classes to specific 
+//tag types automatically
+const bindings = Object.keys(classMap)
+    .map(key => ({
+        
+
+        type: 'output',
+        regex: new RegExp(`<${key}(.*?)>`, 'g'),
+        replace: `<${key} class="${classMap[key]}">`
+}));
+
+const addClass = {
+    type: 'output',
+    filter: text => {
+        var modifiedText = text;
+        Object.keys(classMap).forEach(function(key) {
+            var regex = new RegExp(`<${key}(.*?)>`, 'g');
+            matcher = regex.exec(modifiedText);
+
+            while (matcher != null && !matcher[0].includes(classMap[key])) {
+                console.log(matcher[0]);
+
+                var restOfTag = matcher[1];
+                modifiedText.replace(matcher[0], `<${key} class="${classMap[key]}" ${restOfTag}>`);
+
+                matcher = regex.exec(modifiedText);
+            }
+        });
+        return modifiedText;
+    }
+};
+
+const converter = new showdown.Converter({
+    extensions: [addClass]//bindings]//,
+    // noHeaderId: false // important to add this, else regex match doesn't work
+});
 
 mkdirp(outputDir, (err) => {
     if (err) {

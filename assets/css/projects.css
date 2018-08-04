@@ -31,3 +31,7 @@ ol {
 li p {
     padding-left: 0;
 }
+
+.sticky-offset {
+    top: 56px !important;
+}

@@ -51,8 +51,9 @@
 	background-color: #161038;
 }
 
-.text-yellow {
-	text-emphasis-color: yellow;
+.card-soft-link {
+	color: #5AB2DA;
+	padding-right: 2%;
 }
 
 .card {

@@ -1,5 +1,5 @@
 var $document = $(document),
-    $nav = $('.navbar'),
+    $nav = $('.navbar-top'),
     navbarDef = 'bg-dark',
     effect = 'fadeInDown';
 

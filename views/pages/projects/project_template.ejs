@@ -15,10 +15,10 @@
 
 	<div class="container mt-5">
 		<div class="row">
-			<div class="col-3 mt-5">
-				<%- include(rootPath + page + navExt) %>
+			<div class="col-3 mt-5" id="scrollBar">
+				
 			</div>
-			<div data-spy="scroll" data-target="#nav-scroll" data-offset="0" class="col-9 mt-5 pt-5 pb-5">
+			<div data-spy="scroll" data-target="#scrollBar" data-offset="0" class="col-9 mt-5 pt-5 pb-5">
 				<%- include(rootPath + page) %>
 			</div>
 		</div>
@@ -26,5 +26,11 @@
 
 	<%- include(rootPath + 'partials/footer') %>
 	<%- include(rootPath + 'partials/post_html_include') %>
+	<script type="text/javascript" src="/script/dynamicscrollspy.min.js"></script>
+	<script>
+		$('#scrollBar').DynamicScrollspy({
+			ulClassNames: 'navbar navbar-light bg-light sticky-top sticky-offset'
+		});
+	</script>
 </body>
 </html>

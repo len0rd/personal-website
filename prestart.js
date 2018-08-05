@@ -11,13 +11,13 @@ const showdown  = require('showdown'),
     inputDir  = './project_writeups/',
     outputDir = './views/partials/md/',
     classMap  = {
-        h1: 'display-1'
+        h1: 'display-1' //tag type : class to add to all tags of that type (class="display-1" added to all <h1>)
     };
 
-//handles adding classes to specific 
-//tag types automatically
+// handles adding classes to specific 
+// tag types automatically
 const addClass = {
-    type: 'output',
+    type: 'output', // when it's triggered -> output is at the very end when text is html
     filter: text => {
         var modifiedText = text;
         Object.keys(classMap).forEach(function(key) {
@@ -25,7 +25,8 @@ const addClass = {
             matcher = regex.exec(modifiedText);
 
             while (matcher != null && !matcher[0].includes(classMap[key])) {
-                console.log(matcher[0]);
+                // add the class content WHILE preserving any other properties already in the tag!
+                console.log("adding class content in: " + matcher[0]);
 
                 var restOfTag = matcher[1];
                 modifiedText = modifiedText.replace(matcher[0], `<${key} class="${classMap[key]}" ${restOfTag}>`);
@@ -37,10 +38,12 @@ const addClass = {
     }
 };
 
+// create our Showdown converter with our custom extension
 const converter = new showdown.Converter({
     extensions: [addClass]
 });
 
+// make the directory for our html output if necessary
 mkdirp(outputDir, (err) => {
     if (err) {
         console.error(err);
@@ -49,6 +52,7 @@ mkdirp(outputDir, (err) => {
     }
 });
 
+// Lets start the actual conversion!
 fs.readdir(inputDir, (err, files) => {
     files.forEach(file => {
         if (file.endsWith('.md')) {
@@ -58,7 +62,7 @@ fs.readdir(inputDir, (err, files) => {
                 if (err) {
                     console.error(err);
                 } else {
-                    let html = converter.makeHtml(data);
+                    let html = converter.makeHtml(data); // where the magic happens
                     fs.writeFile(outputDir + fileNameNoExtension + '.ejs', html, 'utf8', (err) => {
                         if (err) {
                             console.error(err);

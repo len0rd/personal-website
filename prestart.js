@@ -24,6 +24,7 @@ const addClass = {
             var regex = new RegExp(`<${key}(.*?)>`, 'g');
             matcher = regex.exec(modifiedText);
 
+            // only proceed if we found a match, and the class we add isn't already on the tag somehow
             while (matcher != null && !matcher[0].includes(classMap[key])) {
                 // add the class content WHILE preserving any other properties already in the tag!
                 console.log("adding class content in: " + matcher[0]);

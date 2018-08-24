@@ -1,6 +1,21 @@
 const PORT = 8090;
+var fs = require('fs');
+var https = require('https');
+var http = require('http');
 var express = require('express');
 var app = express();
+
+var credentials;
+var useHttps = true;
+try {
+    var privateKey  = fs.readFileSync('/etc/letsencrypt/live/lenord.me/privkey.pem', 'utf-8');
+    var certificate = fs.readFileSync('/etc/letsencrypt/live/lenord.me/fullchain.pem', 'utf-8');
+    credentials = {key: privateKey, cert: certificate};
+} catch (error) {
+    useHttps = false;
+    console.warn('WARN::NOT USING HTTPS, reverting to HTTP');
+    console.log(error);
+}
 
 console.log('Starting express server');
 
@@ -33,4 +48,10 @@ app.get(/\/.*/, function(req, res) {
     res.render(pathname, {"page": page});
 });
 
-app.listen(PORT);
+if (useHttps) {
+    var httpsServer = https.createServer(credentials, app);
+    httpsServer.listen(PORT);
+} else {
+    var httpServer = http.createServer(app);
+    httpServer.listen(PORT);
+}

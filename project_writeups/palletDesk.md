@@ -50,7 +50,7 @@ If you're a poor college student as I was, the other option is a crowbar, hammer
 
 Because of this expense of learning, Perhaps only 50% of the 3 pallets I had turned out usable. Unfortunately I don't have any images of this stage of the process likely due to the rage-inducing nature of it all. I worked on this portion of the project at night after getting home from school across a couple of days.
 
-### Building the desktop
+### Desktop
 
 Finally, with all the pallets torn down, I had wood I could start working with. I started out by building the basic frame of the desktop, cutting pallet base 2x4's to size and joining them at 45deg on the corners. This was stupid. Getting perfect 45deg angles to come together and hold well is not easy, especially if you don't know what you're doing. It looks okay in the end product, but if I were todo it again, I would have done simpler, more reliable corners.
 
@@ -84,5 +84,12 @@ Once the crate paper was secured I started cutting and fitting pallet planks. I 
 
 ![Partially finished desktop](/img/writeup/palletDesk/build-7-sm.jpg)
 
-Once a single board was pushed to the far right side, It would be secured on the 3 2x4 frame pieces with screws.
+Once a single board was pushed to the far right side, It would be secured on the 3 2x4 frame pieces with screws and glue. Once all the pieces were secured I went back and started sanding. The desktop was made from a combination of three different pallets, so the wood was vastly different in quality and thickness.
 
+My **biggest** regret in this project was not spending enough time sanding the top. Especially the middle of the desk, I should've spend multiple hours sanding it, with multiple passes at different levels of courseness to make sure it was smooth and flat. A planar and/or a really good electric sander should be a must for this portion of the project. A single board in the middle of my destop is slightly thicker than the others, which means my keyboard can not lie flat without wobbling. 
+
+If you plan on covering the top in epoxy as I did, this is also a good time to make *sure* any and all holes are filled with wood filler (I made wood filler by mixing wood glue with some sawdust). You dont want anywhere for the epoxy to escape so make sure all the old nail holes on the pallet boards are properly filled. 
+
+### Legs
+
+With the desktop done it was time to move on to the legs. There are lots of different options on what to do here. I decided to go with some basic 4x4's. I measured a few bar counters/stools to decide what would be a good height for the legs. I finally decided on ~4ft. This allows the collapsed legs

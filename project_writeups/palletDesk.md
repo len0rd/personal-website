@@ -92,4 +92,32 @@ If you plan on covering the top in epoxy as I did, this is also a good time to m
 
 ### Legs
 
-With the desktop done it was time to move on to the legs. There are lots of different options on what to do here. I decided to go with some basic 4x4's. I measured a few bar counters/stools to decide what would be a good height for the legs. I finally decided on ~4ft. This allows the collapsed legs
+With the desktop done it was time to move on to the legs. There are lots of different options on what to do here. I decided to go with some basic 4x4's. I measured a few bar counters/stools to decide what would be a good height for the legs. I finally decided on ~4ft. This allows the collapsed legs to fit within the desktops footprint for easy portability.
+
+As always transport with the Camry was enjoyable:
+
+![4x4s in the Camry](/img/writeup/palletDesk/build-8-sm.png)
+
+Nothing magic here, just measure and cut. There are definitely better ways to secure the cross beams to the legs, but the best I came up with was using metal plates. The long cross bar is removable, meaning the legs can be broken down into 3 pieces: the left 2 legs, the right 2 legs, and the long cross bar.
+
+Securing the leg assembley to the desktop is done with bolts. Two massive bolts per leg are inserted in perpendicular directions through the desktop and leg. The 3/8" bolts are then secured with washer, split-locking washer and nut.
+
+Once again, my impatience got the better of me, and I failed to sand the legs as much as I should have. Don't skimp on sanding!
+
+![Unstained without long cross bar](/img/writeup/palletDesk/build-9-sm.png)
+
+![Unstained with long cross bar](/img/writeup/palletDesk/build-10-sm.png)
+
+### Stain and Epoxy
+
+With the desk fully constructed, it was time to add the finishing touches to make it a usable piece of furniture. First up was staining. I went with a homemade solution for the stain. I let a gallon of vinegar, steel wool and hydrogen peroxide... ferment(?)... soak for a week. There are a lot of videos online about this type of homemade stain. The desired outcome of this stain is a rustic/aged look. The hydrogen peroxide helps add a red tint to the stain.
+
+The results for me were a bit mixed. Some board took the stain beautifully; producing a slightly dark stain with a perfect hint of red. Others ate it right up and produced an incredibly dark wood with 0 red. Especially the legs, which the stain essentially just made dark brown. In hindsight, I should have tested the stain more on some scrap wood before applying it.
+
+![Stained top](/img/writeup/palletDesk/build-11-sm.png)
+
+![Stained desk](/img/writeup/palletDesk/build-12-sm.png)
+
+That 5 gallon bucket next to the desk? That's the stain... I may have a little too much.
+
+With everything stained I was ready to finish up by applying epoxy to the desktop. The idea here is that epoxy is fairly self-leveling, which will help reduce any error in my build. With using old beatup pallet wood, I also thought it best to use epoxy to avoid any latent splinters. 

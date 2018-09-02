@@ -104,9 +104,9 @@ Securing the leg assembley to the desktop is done with bolts. Two massive bolts 
 
 Once again, my impatience got the better of me, and I failed to sand the legs as much as I should have. Don't skimp on sanding!
 
-![Unstained without long cross bar](/img/writeup/palletDesk/build-9-sm.png)
+![Unstained without long cross bar](/img/writeup/palletDesk/build-9-sm.jpg)
 
-![Unstained with long cross bar](/img/writeup/palletDesk/build-10-sm.png)
+![Unstained with long cross bar](/img/writeup/palletDesk/build-10-sm.jpg)
 
 ### Stain and Epoxy
 
@@ -114,10 +114,28 @@ With the desk fully constructed, it was time to add the finishing touches to mak
 
 The results for me were a bit mixed. Some board took the stain beautifully; producing a slightly dark stain with a perfect hint of red. Others ate it right up and produced an incredibly dark wood with 0 red. Especially the legs, which the stain essentially just made dark brown. In hindsight, I should have tested the stain more on some scrap wood before applying it.
 
-![Stained top](/img/writeup/palletDesk/build-11-sm.png)
+![Stained top](/img/writeup/palletDesk/build-11-sm.jpg)
 
-![Stained desk](/img/writeup/palletDesk/build-12-sm.png)
+![Stained desk](/img/writeup/palletDesk/build-12-sm.jpg)
 
-That 5 gallon bucket next to the desk? That's the stain... I may have a little too much.
+That 5 gallon bucket next to the desk? That's the stain... I may have made a little too much.
 
-With everything stained I was ready to finish up by applying epoxy to the desktop. The idea here is that epoxy is fairly self-leveling, which will help reduce any error in my build. With using old beatup pallet wood, I also thought it best to use epoxy to avoid any latent splinters. 
+With everything stained I was ready to finish up by applying epoxy to the desktop. The idea here is that epoxy is fairly self-leveling, which will help reduce any error in my build. With using old beatup pallet wood, I also thought it best to use epoxy to avoid any latent splinters. The epoxy provides a smooth glass-like surface which has looked great since it was applied.
+
+I got a gallon kit of the stuff off Amazon. It came with instructions, and I made sure to watch *many* youtube videos about epoxy application before attempting. As previously stated, I wish I had spent more time sanding the top, and making sure all the holes many, many nail holes were filled in better. Despite these errors, the epoxy took fairly well. I started with a thin coat to try and help 'seal' the top. This likely helped with some of the smaller holes, but there was nothing to be done for the larger ones. After that, I applied the whole thing. Pouring right in the middle and letting it spread itself out. The end result is a nice glossy surface that really brings out the subtle stain in some of the boards.
+
+![Done! 1](/img/writeup/palletDesk/build-13-sm.jpg)
+
+![Done! 2](/img/writeup/palletDesk/build-14-sm.jpg)
+
+![Done! 3](/img/writeup/palletDesk/build-15-sm.jpg)
+
+And, in case you doubted, here's the desk broken down and in the trunk of my Camry:
+
+![In the Camry](/img/writeup/palletDesk/incar-1-sm.jpg)
+
+## tl;dr
+
+The desk works great, and overall the design is very forgiving to rookie mistakes. Make sure you have the proper tools (Jigsaw) for pallet dissassembly. Dont skimp on sanding the desktop, and if you're going to use epoxy, make *absolutely* sure that you have adequately filled in all the nail holes in the pallet wood before application.
+
+![Done! 4](/img/writeup/palletDesk/finished-1-lg.jpg)

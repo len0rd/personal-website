@@ -15,3 +15,8 @@ Its a website! Node/npm
 \#865897
 
 \#06061D
+
+## Run locally
+
+1. From this directory install dependencies with `npm install`
+2. Run the server with `npm start`

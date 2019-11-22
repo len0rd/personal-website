@@ -22,9 +22,10 @@ app.get(/\/.*/, function(req, res) {
         if (pathname.includes('projects') && page !== 'index') {
             // projects has a custom template that is used for all projects
             // so we need to change the pathname that the renderer is using
-            // to that template:
+            // that template:
             pathname = pathname.substr(0, pathname.lastIndexOf(page));
             pathname += 'project_template'
+            // provide the pagename for project_template to use for main content
             page = 'partials/md/' + page;
         }
     }

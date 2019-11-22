@@ -6,6 +6,7 @@
 // that we aren't converting MD -> ejs
 // on EVERY request
 const showdown  = require('showdown'),
+    showdownHighlight = require("showdown-highlight"),
     fs        = require('fs'),
     mkdirp    = require('mkdirp'),
     inputDir  = './project_writeups/',
@@ -41,7 +42,7 @@ const addClass = {
 
 // create our Showdown converter with our custom extension
 const converter = new showdown.Converter({
-    extensions: [addClass]
+    extensions: [addClass, showdownHighlight],
 });
 
 // make the directory for our html output if necessary

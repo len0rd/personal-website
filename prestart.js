@@ -1,8 +1,8 @@
 // convert our markdown documentation files
 // to 'static' html/ejs partials:
 // while this is a bit inconvenient (you need to restart
-// the server everytime you want to see 
-// md changes), it is more efficient in 
+// the server everytime you want to see
+// md changes), it is more efficient in
 // that we aren't converting MD -> ejs
 // on EVERY request
 const showdown  = require('showdown'),
@@ -15,7 +15,7 @@ const showdown  = require('showdown'),
         h1: 'display-1' //tag type : class to add to all tags of that type (class="display-1" added to all <h1>)
     };
 
-// handles adding classes to specific 
+// handles adding classes to specific
 // tag types automatically
 const addClass = {
     type: 'output', // when it's triggered -> output is at the very end when text is html
@@ -46,7 +46,7 @@ const converter = new showdown.Converter({
 });
 
 // make the directory for our html output if necessary
-mkdirp(outputDir, (err) => {
+mkdirp(outputDir, null, (err) => {
     if (err) {
         console.error(err);
     } else {

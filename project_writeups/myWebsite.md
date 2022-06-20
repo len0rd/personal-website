@@ -12,7 +12,7 @@ As I'm writing this page after the fact (about a year since originally making th
 
 - [NPM](https://www.npmjs.com) for a bunch of support packages
 
-- [ExpressJS](https://expressjs.com) for amped up static pages. Express is great for beginners that want a simple framework for a static website with no code duplication
+- [ExpressJS](https://expressjs.com) with [ejs](https://ejs.co/) for amped up static pages. Express is great for beginners that want a simple framework for a static website with no code duplication
 
 - [Bootstrap](https://getbootstrap.com) to make it all pretty
 

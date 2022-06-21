@@ -1,0 +1,32 @@
+<% var rootPath = '../../'; %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include(rootPath + 'partials/include' ) %>
+        <link rel="stylesheet" type="text/css" href="/css/projects.css">
+</head>
+
+<body>
+    <header>
+        <%- include(rootPath + 'partials/nav') %>
+    </header>
+
+    <div class="container mt-5">
+		<div class="row">
+			<%- include(rootPath + page) %>
+		</div>
+	</div>
+
+	<%- include(rootPath + 'partials/footer') %>
+	<%- include(rootPath + 'partials/post_html_include') %>
+	<script type="text/javascript" src="/script/dynamicscrollspy.min.js"></script>
+	<script>
+		$('#scrollBar').DynamicScrollspy({
+			ulClassNames: 'navbar navbar-light bg-light sticky-top sticky-offset'
+		});
+	</script>
+
+    <%- include(rootPath + 'partials/post_html_include') %>
+</body>
+</html>

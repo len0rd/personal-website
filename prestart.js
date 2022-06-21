@@ -5,13 +5,15 @@
 // md changes), it is more efficient in
 // that we aren't converting MD -> ejs
 // on EVERY request
-const showdown  = require('showdown'),
+const showdown = require('showdown'),
     showdownHighlight = require("showdown-highlight"),
-    fs        = require('fs'),
-    mkdirp    = require('mkdirp'),
-    inputDir  = './project_writeups/',
-    outputDir = './views/partials/md/',
-    classMap  = {
+    fs = require('fs'),
+    mkdirp = require('mkdirp'),
+    projectInputDir = './project_writeups/',
+    projectOutputDir = './views/partials/md/projects/',
+    recipeInputDir = './recipes/',
+    recipeOutputDir = './views/partials/md/recipes/',
+    classMap = {
         h1: 'display-1' //tag type : class to add to all tags of that type (class="display-1" added to all <h1>)
     };
 
@@ -21,7 +23,7 @@ const addClass = {
     type: 'output', // when it's triggered -> output is at the very end when text is html
     filter: text => {
         var modifiedText = text;
-        Object.keys(classMap).forEach(function(key) {
+        Object.keys(classMap).forEach(function (key) {
             var regex = new RegExp(`<${key}(.*?)>`, 'g');
             matcher = regex.exec(modifiedText);
 
@@ -43,35 +45,34 @@ const addClass = {
 // create our Showdown converter with our custom extension
 const converter = new showdown.Converter({
     extensions: [addClass, showdownHighlight],
+    tables: true
 });
 
-// make the directory for our html output if necessary
-mkdirp(outputDir, null, (err) => {
-    if (err) {
-        console.error(err);
-    } else {
-        console.log('output dir created');
-    }
-});
 
-// Lets start the actual conversion!
-fs.readdir(inputDir, (err, files) => {
-    files.forEach(file => {
-        if (file.endsWith('.md')) {
-            let fileNameNoExtension = file.slice(0, -3);
-            console.log('converting: ' + fileNameNoExtension);
-            fs.readFile(inputDir + file, 'utf8', (err, data) => {
-                if (err) {
-                    console.error(err);
-                } else {
-                    let html = converter.makeHtml(data); // where the magic happens
-                    fs.writeFile(outputDir + fileNameNoExtension + '.ejs', html, 'utf8', (err) => {
-                        if (err) {
-                            console.error(err);
-                        }
-                    });
-                }
-            });
-        }
+function convertMarkdownInDir(inputDir, outputDir) {
+    // make the directory for the html output if necessary
+    mkdirp.sync(outputDir);
+    fs.readdir(inputDir, (err, files) => {
+        files.forEach(file => {
+            if (file.endsWith('.md')) {
+                let fileNameNoExtension = file.slice(0, -3);
+                console.log('converting: ' + fileNameNoExtension);
+                fs.readFile(inputDir + file, 'utf8', (err, data) => {
+                    if (err) {
+                        console.error(err);
+                    } else {
+                        let html = converter.makeHtml(data); // where the magic happens
+                        fs.writeFile(outputDir + fileNameNoExtension + '.ejs', html, 'utf8', (err) => {
+                            if (err) {
+                                console.error(err);
+                            }
+                        });
+                    }
+                });
+            }
+        });
     });
-});
+}
+
+convertMarkdownInDir(projectInputDir, projectOutputDir);
+convertMarkdownInDir(recipeInputDir, recipeOutputDir);

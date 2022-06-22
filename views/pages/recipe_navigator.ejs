@@ -34,13 +34,14 @@
 
     <%- include('../partials/post_html_include') %>
     <script>
+        const TAG_ACTIVE_CLASS = "btn-primary";
 
         /// Returns a list of the current recipe hashtags that are enabled (enabled filters)
         function getActiveTags() {
             var activeTags = [];
             // create a list of currently active tags
             $(".btn-container button").filter(function() {
-                if ($(this).hasClass("btn-primary")){
+                if ($(this).hasClass(TAG_ACTIVE_CLASS)){
                     activeTags.push($(this).text())
                 }
             });
@@ -57,28 +58,43 @@
             return !searchValue || recipe.text().toLowerCase().indexOf(searchValue) > -1;
         }
 
-        /// This script is responsible for filtering the recipe list
-        /// based on enabled/disabled hashtags. I'm certain theres more
-        /// efficient ways to do this but /shrug
-        $(".btn-container").on("click", "button", function() {
-            $(this).toggleClass("btn-light btn-primary");
+        function setActiveRecipes() {
             const activeTags = getActiveTags();
             const searchValue = $("#recipeSearch").val().toLowerCase();
 
             $("#recipe-link-container a").filter(function() {
                 $(this).toggle(recipeHasCurrentSearchPhrase(searchValue, $(this)) && recipeHasAllActiveTags(activeTags, $(this)));
             });
+        }
+
+        /// This script is responsible for filtering the recipe list
+        /// based on enabled/disabled hashtags. I'm certain theres more
+        /// efficient ways to do this but /shrug
+        $(".btn-container").on("click", "button", function() {
+            $(this).toggleClass("btn-light btn-primary");
+            setActiveRecipes();
         });
 
         /// This method is responsible for filtering the recipe list based on the search bar
-        $(document).ready(function(){
+        $(document).ready(function() {
             $("#recipeSearch").on("keyup", function() {
-                const searchValue = $("#recipeSearch").val().toLowerCase();
-                const activeTags = getActiveTags();
-                $("#recipe-link-container a").filter(function() {
-                    $(this).toggle(recipeHasCurrentSearchPhrase(searchValue, $(this)) && recipeHasAllActiveTags(activeTags, $(this)));
-                });
+                setActiveRecipes();
             });
+        });
+
+        // apply a tag on page load if specified in the url
+        $(document).ready(function() {
+            let searchParams = new URLSearchParams(window.location.search);
+            if (searchParams.has("tag")) {
+                const tagParam = searchParams.get("tag").toLowerCase().trim();
+                $(".btn-container button").filter(function() {
+                    if (tagParam == $(this).text().toLowerCase().trim()) {
+                        $(this).toggleClass("btn-light btn-primary");
+                        setActiveRecipes();
+                        return;
+                    }
+                });
+            }
         });
     </script>
 </body>

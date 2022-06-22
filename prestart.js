@@ -84,7 +84,7 @@ function convertRecipeMarkdown(inputDir, outputDir) {
 
     md.renderer.rules.hashtag_open = function (tokens, idx) {
         var tagName = tokens[idx].content.toLowerCase();
-        return '<a href="/tags/' + tagName + '"><span class="badge bg-secondary">';
+        return '<a href="/recipe_navigator?tag=' + tagName + '"><span class="badge bg-secondary">';
     }
 
     md.renderer.rules.hashtag_close = function () { return '</span></a>'; }

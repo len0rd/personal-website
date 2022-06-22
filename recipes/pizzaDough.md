@@ -1,5 +1,7 @@
 # Pizza Dough
 
+#bread #italian
+
 ## Ingredients
 
 Measure | Weight | Ingredient

@@ -1,5 +1,7 @@
 # Banana Bread
 
+#bread #dessert
+
 ## Ingredients
 
 Measure | Weight | Ingredient

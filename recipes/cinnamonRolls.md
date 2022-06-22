@@ -1,5 +1,7 @@
 # Cinnamon Rolls
 
+#breakfast #bread #dessert
+
 ![Cinnamon Roll](/img/recipes/cinnamonRolls.jpeg)
 
 ## Ingredients

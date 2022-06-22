@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/include' ) %>
-        <link rel="stylesheet" type="text/css" href="/css/projects.css">
+    <link rel="stylesheet" type="text/css" href="/css/projects.css">
 </head>
 
 <body>
@@ -13,15 +13,58 @@
 
     <div class="container mt-5 topMargin">
         <h1>Recipes</h1>
-        <div class="list-group">
-            <a href="recipes/chocolateChipCookies" class="list-group-item list-group-item-action">Chocolate Chip Cookies</a>
-            <a href="recipes/pizzaDough" class="list-group-item list-group-item-action">Pizza Dough</a>
-            <a href="recipes/bananaBread" class="list-group-item list-group-item-action">Banana Bread</a>
-            <a href="recipes/cinnamonRolls" class="list-group-item list-group-item-action">Cinnamon Rolls</a>
+        <div class="row mb-2">
+            <div class="col btn-container">
+                <%- include('../partials/generated/recipe-tags') %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="list-group" id="recipe-link-container">
+                <%- include('../partials/generated/recipe-links') %>
+            </div>
         </div>
     </div>
 
     <%- include('../partials/post_html_include') %>
+    <script>
+        /// This script is responsible for filtering the recipe list
+        /// based on enabled/disabled hashtags. I'm certain theres more
+        /// efficient ways to do this but /shrug
+        $(".btn-container").on("click", "button", function() {
+            $(this).toggleClass("btn-light btn-primary");
+            var tag = $(this).text();
+            var activeTags = [];
+            // create a list of currently active tags
+            $(".btn-container button").filter(function() {
+                if ($(this).hasClass("btn-primary")){
+                    activeTags.push($(this).text())
+                }
+            });
+
+            if ($(this).hasClass("btn-primary")) {
+                // if tag is active, activate its filter
+                $("#recipe-link-container a:visible").filter(function() {
+                    $(this).toggle($(this).attr("tags").toLowerCase().indexOf(tag) > -1)
+                });
+            }
+            else if ($(this).hasClass("btn-light")) {
+                // tag has been toggled off. re-add any thing that is hidden but shouldnt be
+                $("#recipe-link-container a:hidden").filter(function() {
+                    const elemTagList = $(this).attr("tags").toLowerCase();
+                    hasActiveTags = true;
+                    for (const activeTag of activeTags) {
+                        if (elemTagList.indexOf(activeTag) == -1) {
+                            hasActiveTags = false;
+                            break;
+                        }
+                    }
+                    if (hasActiveTags) {
+                        $(this).toggle(true);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

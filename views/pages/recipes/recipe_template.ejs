@@ -12,20 +12,22 @@
         <%- include(rootPath + 'partials/nav') %>
     </header>
 
-    <div class="container mt-5">
-		<div class="row">
-			<%- include(rootPath + page) %>
-		</div>
-	</div>
+    <div class="container mt-5 topMargin">
+        <div class="row g-0">
+            <div class="col-md-8">
+                <%- include(rootPath + page + '-title') %>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <%- include(rootPath + page + '-ingredients') %>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	<%- include(rootPath + 'partials/footer') %>
-	<%- include(rootPath + 'partials/post_html_include') %>
-	<script type="text/javascript" src="/script/dynamicscrollspy.min.js"></script>
-	<script>
-		$('#scrollBar').DynamicScrollspy({
-			ulClassNames: 'navbar navbar-light bg-light sticky-top sticky-offset'
-		});
-	</script>
+		<%- include(rootPath + page + '-instructions') %>
+	</div>
 
     <%- include(rootPath + 'partials/post_html_include') %>
 </body>

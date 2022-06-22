@@ -2,6 +2,8 @@
 
 *yields: ~4 dozen*
 
+![Cookies](/img/recipes/chocolateChipCookies.jpeg)
+
 ## Ingredients
 
 Measure | Weight | Ingredient
@@ -16,7 +18,7 @@ Measure | Weight | Ingredient
 2 3/4c | 370g | Flour
 1 tsp | 7g | Baking Soda
 1 tsp | 7g | Salt
-| 1g | Cinnamon
+1/4 tsp | 1g | Cinnamon
 2c | | Chocolate Chip
 
 ## Instructions

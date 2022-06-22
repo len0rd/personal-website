@@ -21,6 +21,7 @@
     "dynamic-scrollspy": "^0.2.0",
     "ejs": "^3.1.8",
     "express": "^4.17.1",
+    "markdown-it": "^13.0.1",
     "mkdirp": "^1.0.4",
     "showdown": "^2.1.0",
     "showdown-highlight": "^3.0.0"

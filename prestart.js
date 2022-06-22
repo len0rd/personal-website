@@ -78,7 +78,15 @@ function convertMarkdownInDirWithShowdown(inputDir, outputDir, converter) {
 }
 
 function convertRecipeMarkdown(inputDir, outputDir) {
-    var md = require('markdown-it')();
+    var md = require('markdown-it')()
+        .use(require('markdown-it-hashtag'));
+
+    md.renderer.rules.hashtag_open = function (tokens, idx) {
+        var tagName = tokens[idx].content.toLowerCase();
+        return '<a href="/tags/' + tagName + '"><span class="badge bg-secondary">';
+    }
+
+    md.renderer.rules.hashtag_close = function () { return '</span></a>'; }
 
     // This is a hardcoded markdown header section number to html file name
     //

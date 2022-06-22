@@ -1,5 +1,7 @@
 # Chocolate Chip Cookies
 
+#dessert #cookie
+
 *yields: ~4 dozen*
 
 ![Cookies](/img/recipes/chocolateChipCookies.jpeg)

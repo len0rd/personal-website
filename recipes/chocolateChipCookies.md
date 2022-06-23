@@ -8,20 +8,20 @@
 
 ## Ingredients
 
-Measure | Weight | Ingredient
---------|--------|-----------
-1c | | Unsalted Butter
-1 1/4c | 290g | Brown Sugar
-1/4c | 60g | Sugar
-1 | | Egg
-1 | | Egg Yolk
-2 tbsp | | Whole Milk
-1 1/2 tsp | | Vanilla
-2 3/4c | 370g | Flour
-1 tsp | 7g | Baking Soda
-1 tsp | 7g | Salt
-1/4 tsp | 1g | Cinnamon
-2c | | Chocolate Chip
+Measure | Unit | Weight | Ingredient
+--------|------|--------|-----------
+1 | c | | Unsalted Butter
+1 1/4 | c | 290g | Brown Sugar
+1/4 | c | 60g | Sugar
+1 | | | Egg
+1 | | | Egg Yolk
+2 | tbsp | | Whole Milk
+1 1/2 | tsp | | Vanilla
+2 3/4 | c | 370g | Flour
+1 | tsp | 7g | Baking Soda
+1 | tsp | 7g | Salt
+1/4 | tsp | 1g | Cinnamon
+2 | c | | Chocolate Chip
 
 ## Instructions
 

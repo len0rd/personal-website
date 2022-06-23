@@ -4,19 +4,19 @@
 
 ## Ingredients
 
-Measure | Weight | Ingredient
---------|--------|-----------
-1/4 c | | Cinnamon-Sugar
-3 c | | Sugar
-3 | | Egg
-6 | | Mashed Ripe Banana
-3/4 c | | Butter
-16 oz | | Sour Cream
-2 tsp | | Vanilla
-2 tsp | | Cinnamon
-1/2 tsp | | Salt
-3 tsp | | Baking Soda
-4 1/2 c | | Flour
+Measure | Unit | Weight | Ingredient
+--------|------|--------|-----------
+1/4 | c | | Cinnamon-Sugar
+3 | c | | Sugar
+3 | | | Eggs
+6 | | | Banana
+3/4 | c | | Butter
+16 | oz | | Sour Cream
+2 | tsp | | Vanilla
+2 | tsp | | Cinnamon
+1/2 | tsp | | Salt
+3 | tsp | | Baking Soda
+4 1/2 | c | | Flour
 
 ## Instructions
 

@@ -4,14 +4,14 @@
 
 ## Ingredients
 
-Measure | Weight | Ingredient
---------|--------|-----------
-2 1/2c | | Flour
-1 tsp | 7g | Salt
-1 tsp | | Sugar
-2 tbsp | | Olive Oil
-1 c | | Warm Water (110F)
-2 1/3 tsp | | Yeast
+Measure | Unit | Weight | Ingredient
+--------|------|--------|-----------
+2 1/2 | c | | Flour
+1 | tsp | 7g | Salt
+1 | tsp | | Sugar
+2 | tbsp | | Olive Oil
+1 | c | | Warm Water (110F)
+2 1/3 | tsp | | Yeast
 
 ## Instructions
 

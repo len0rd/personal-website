@@ -126,6 +126,31 @@ function convertRecipeMarkdown(inputDir, outputDir) {
                     console.error(err);
                     return;
                 }
+
+                var ingredientTableRegex = new RegExp(`^(.*?)\\|(.*?)(\\|.*?\\|.*?)\n`, `gm`);
+                var ingredientDashCheck = new RegExp("^\-+$");
+                ingredientTableMatcher = ingredientTableRegex.exec(data);
+                while (ingredientTableMatcher != null) {
+                    meas = ingredientTableMatcher[1];
+                    let unit = ingredientTableMatcher[2].toLowerCase().trim();
+                    if (unit != "unit" && unit && !ingredientDashCheck.test(unit)) {
+                        meas += unit + " ";
+                    }
+                    data = data.replace(ingredientTableMatcher[0], `${meas}${ingredientTableMatcher[3]}\n`);
+                    ingredientTableMatcher = ingredientTableRegex.exec(data);
+                }
+                ingredientTableRegex = new RegExp(`^(.*?)\\|(.*?)(\\|.*?\\|.*?)\n`, `gm`);
+                ingredientTableMatcher = ingredientTableRegex.exec(data);
+                while (ingredientTableMatcher != null) {
+                    meas = ingredientTableMatcher[1];
+                    let unit = ingredientTableMatcher[2].toLowerCase().trim();
+                    if (unit != "unit" && unit && !ingredientDashCheck.test(unit)) {
+                        meas += unit + " ";
+                    }
+                    data = data.replace(ingredientTableMatcher[0], `${meas}${ingredientTableMatcher[3]}\n`);
+                    ingredientTableMatcher = ingredientTableRegex.exec(data);
+                }
+
                 let tokens = md.parse(data)
 
                 let sections = []

@@ -4,14 +4,14 @@
 
 ## Ingredients
 
-Measure | Weight | Ingredient
---------|--------|-----------
-3 | | Bananas
-1/3 c | | Brandy or Rum
-Dash | | Cinnamon
-1/2 c | | Butter
-1 c | | Brown Sugar
-1 tsp | | Vanilla
+Measure | Unit | Weight | Ingredient
+--------|------|--------|-----------
+3 | | | Bananas
+1/3 | c | | Brandy or Rum
+Dash | | | Cinnamon
+1/2 | c | | Butter
+1 | c | | Brown Sugar
+1 | tsp | | Vanilla
 
 ## Instructions
 

@@ -4,15 +4,15 @@
 
 ## Ingredients
 
-Measure | Weight | Ingredient
---------|--------|-----------
-4 | | Biscuit Cans
-2/3 c | | Sugar
-1 1/2 tsp | | Cinnamon
-**Sauce**| |
-1 1/8 c | | Butter
-1 1/2 c | | Sugar
-1 1/2 tsp | | Cinnamon
+Measure | Unit | Weight | Ingredient
+--------|------|--------|-----------
+4 | | | Biscuit Cans
+2/3 | c | | Sugar
+1 1/2 | tsp | | Cinnamon
+**Sauce** | | |
+1 1/8 | c | | Butter
+1 1/2 | c | | Sugar
+1 1/2 | tsp | | Cinnamon
 
 ## Instructions
 

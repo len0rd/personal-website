@@ -4,16 +4,16 @@
 
 ## Ingredients
 
-Measure | Weight | Ingredient
---------|--------|-----------
-1 3/4 c | | Flour
-1/2 tsp | | Salt
-3 tsp | | Baking Powder
-1/2 c | | Instant Dry Milk
-2 | | Eggs
-1/2 c | | Oil
-1 3/4 c | | Water
-Dash | | Cinnamon
+Measure | Unit | Weight | Ingredient
+--------|------|--------|-----------
+1 3/4 | c | | Flour
+1/2 | tsp | | Salt
+3 | tsp | | Baking Powder
+1/2 | c | | Instant Dry Milk
+2 | | | Eggs
+1/2 | c | | Oil
+1 3/4 | c | | Water
+Dash | | | Cinnamon
 
 ## Instructions
 

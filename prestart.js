@@ -127,7 +127,7 @@ function convertRecipeMarkdown(inputDir, outputDir) {
                     return;
                 }
 
-                var ingredientTableRegex = new RegExp(`^(.*?)\\|(.*?)(\\|.*?\\|.*?)\n`, `gm`);
+                var ingredientTableRegex = new RegExp(`^(\\|?.*?)\\|(.*?)(\\|.*?\\|.*?)\n`, `gm`);
                 var ingredientDashCheck = new RegExp("^\-+$");
                 ingredientTableMatcher = ingredientTableRegex.exec(data);
                 while (ingredientTableMatcher != null) {
@@ -139,7 +139,6 @@ function convertRecipeMarkdown(inputDir, outputDir) {
                     data = data.replace(ingredientTableMatcher[0], `${meas}${ingredientTableMatcher[3]}\n`);
                     ingredientTableMatcher = ingredientTableRegex.exec(data);
                 }
-                ingredientTableRegex = new RegExp(`^(.*?)\\|(.*?)(\\|.*?\\|.*?)\n`, `gm`);
                 ingredientTableMatcher = ingredientTableRegex.exec(data);
                 while (ingredientTableMatcher != null) {
                     meas = ingredientTableMatcher[1];
@@ -252,7 +251,7 @@ function generateRecipeNavigatorList(recipeSrcDir, generatedOutputDir) {
         //      instead of alphabetically
         let tagListPartialOut = "";
         allRecipeHashtags.sort().forEach(hashtag => {
-            tagListPartialOut += `<button type="button" class="btn btn-light">${hashtag}</button>\n`;
+            tagListPartialOut += `<button type="button" class="btn btn-light btn-sm">${hashtag}</button>\n`;
         });
         fs.writeFileSync(generatedOutputDir + "recipe-tags.ejs", tagListPartialOut, "utf-8");
     });

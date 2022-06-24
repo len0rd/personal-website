@@ -4,7 +4,7 @@
 
 *yields: ~4 dozen*
 
-![Cookies](/img/recipes/chocolateChipCookies.jpeg)
+![Cookies](/img/recipes/chocolateChipCookies.jpg)
 
 ## Ingredients
 

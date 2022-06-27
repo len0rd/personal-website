@@ -1,21 +1,21 @@
 .icon-footer {
-	padding:  2%;
-    padding: 2vh;
+	padding: 2%;
+	padding: 2vh;
 }
 
 .bgimage {
-	width:100%;
-	height:100vh;
+	width: 100%;
+	height: 100vh;
 	background: url('../img/logo.svg');
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size:cover;
+	background-size: cover;
 	background-attachment: fixed;
 }
 
 .bgimage h1 {
-	color:white;
-	text-shadow:2px 2px #333;
+	color: white;
+	text-shadow: 2px 2px #333;
 }
 
 .center {
@@ -27,7 +27,7 @@
 
 .navbar-transparent {
 	background-color: transparent;
-	border-color: rgba(255,255,255,0.4);
+	border-color: rgba(255, 255, 255, 0.4);
 }
 
 .cenMain {
@@ -35,16 +35,22 @@
 	padding-bottom: 40%;
 	padding-top: 40vh;
 	padding-bottom: 40vh;
-    width: 60%;
-    margin: auto;
-    
+	width: 60%;
+	margin: auto;
 }
 
 .container-cenMain {
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.topMargin {
+	padding-top: 5%;
+	padding-top: 5vh;
+	width: 60%;
+	margin: auto;
 }
 
 .code {
@@ -56,6 +62,8 @@
 	padding-left: 2%;
 }
 
-.card {
+.card-homepage {
 	background-color: rgba(0, 0, 0, 0.1) !important;
+	padding: 2%;
+	height: 100%;
 }

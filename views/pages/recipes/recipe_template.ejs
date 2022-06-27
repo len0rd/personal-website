@@ -1,0 +1,34 @@
+<% var rootPath = '../../'; %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include(rootPath + 'partials/include' ) %>
+        <link rel="stylesheet" type="text/css" href="/css/projects.css">
+</head>
+
+<body>
+    <header>
+        <%- include(rootPath + 'partials/nav') %>
+    </header>
+
+    <div class="container mt-5 topMargin">
+        <div class="row">
+            <div class="col-md-8">
+                <%- include(rootPath + page + '-title') %>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <%- include(rootPath + page + '-ingredients') %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<%- include(rootPath + page + '-instructions') %>
+	</div>
+
+    <%- include(rootPath + 'partials/post_html_include') %>
+</body>
+</html>

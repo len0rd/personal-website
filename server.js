@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 // add folder for static content:
 app.use(express.static(__dirname + '/assets'));
 
-app.get(/\/.*/, function(req, res) {
+app.get(/\/.*/, function (req, res) {
     let pathname = 'pages' + req.path;
     let page = pathname.substr(pathname.lastIndexOf('/') + 1);
 
@@ -26,12 +26,18 @@ app.get(/\/.*/, function(req, res) {
             pathname = pathname.substr(0, pathname.lastIndexOf(page));
             pathname += 'project_template'
             // provide the pagename for project_template to use for main content
-            page = 'partials/md/' + page;
+            page = 'partials/md/projects/' + page;
+        }
+        else if (pathname.includes('recipes') && page !== 'index') {
+            pathname = pathname.substr(0, pathname.lastIndexOf(page));
+            pathname += 'recipe_template'
+            // provide the pagename for project_template to use for main content
+            page = 'partials/md/recipes/' + page;
         }
     }
     console.log('request for path: ' + pathname + ', and page: ' + page);
 
-    res.render(pathname, {"page": page});
+    res.render(pathname, { "page": page });
 });
 
 app.listen(PORT);

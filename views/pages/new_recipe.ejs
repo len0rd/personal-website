@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<%- include('../partials/include') %>
+</head>
+
+<body>
+	<header>
+		<%- include('../partials/nav') %>
+	</header>
+
+    <div class="container mt-5 topMargin">
+        <form class="row needs-validation" novalidate>
+            <div class="col">
+                <h1 class="display-1">New Recipe</h1>
+            </div>
+            <div class="mb-3">
+                <label for="recipe_name_input" class="form-label">Recipe Name</label>
+                <div class="input-group has-validation">
+                    <input type="text" class="form-control" id="recipe_name_input" placeholder="Banana Bread" required>
+                    <div class="invalid-feedback">
+                        Recipe name required
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="tag_input" class="form-label">Tags (comma-seperated)</label>
+                <input type="text" class="form-control" id="tag_input" pattern="(\w+,?)+" placeholder="bread,dessert" required>
+                <div class="invalid-feedback">
+                    Tags required as comma-separated list. Letters only.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="ingredient_input" class="form-label">Ingredients (pipe-separated) <b>Measure | Unit | Weight | Ingredient</b></label>
+                <textarea class="form-control" id="ingredient_input" rows="8" placeholder="1/2 | c | 150g | Sugar
+1 | tsp | 7g | Cinnamon" required></textarea>
+                <div class="invalid-feedback">
+                    Ingredients required
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="instruction_input" class="form-label">Instructions</label>
+                <textarea class="form-control" id="instruction_input" rows="8" placeholder="1. Preheat oven..
+2. Mix stuff..." required></textarea>
+                <div class="invalid-feedback">
+                    Instructions required
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+            </div>
+        </form>
+    </div>
+
+	<%- include('../partials/post_html_include') %>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>

@@ -1,6 +1,9 @@
 const PORT = 8090;
 var express = require('express');
+const formidable = require('express-formidable');
 var app = express();
+
+app.use(formidable());
 
 console.log('Starting express server on port ' + PORT);
 
@@ -38,6 +41,11 @@ app.get(/\/.*/, function (req, res) {
     console.log('request for path: ' + pathname + ', and page: ' + page);
 
     res.render(pathname, { "page": page });
+});
+
+app.post("/new_recipe", function (req, res) {
+    console.log(JSON.stringify(req.fields));
+    res.send('mission success');
 });
 
 app.listen(PORT);

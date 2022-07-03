@@ -11,14 +11,14 @@
 	</header>
 
     <div class="container mt-5 topMargin">
-        <form class="row needs-validation" novalidate>
+        <form id="new_recipe_form" class="row needs-validation" method="post" novalidate>
             <div class="col">
                 <h1 class="display-1">New Recipe</h1>
             </div>
             <div class="mb-3">
                 <label for="recipe_name_input" class="form-label">Recipe Name</label>
                 <div class="input-group has-validation">
-                    <input type="text" class="form-control" id="recipe_name_input" placeholder="Banana Bread" required>
+                    <input type="text" class="form-control" name="recipe_name_input" placeholder="Banana Bread" required>
                     <div class="invalid-feedback">
                         Recipe name required
                     </div>
@@ -26,14 +26,14 @@
             </div>
             <div class="mb-3">
                 <label for="tag_input" class="form-label">Tags (comma-seperated)</label>
-                <input type="text" class="form-control" id="tag_input" pattern="(\w+,?)+" placeholder="bread,dessert" required>
+                <input type="text" class="form-control" name="tag_input" pattern="(\w+,?)+" placeholder="bread,dessert" required>
                 <div class="invalid-feedback">
                     Tags required as comma-separated list. Letters only.
                 </div>
             </div>
             <div class="mb-3">
                 <label for="ingredient_input" class="form-label">Ingredients (pipe-separated) <b>Measure | Unit | Weight | Ingredient</b></label>
-                <textarea class="form-control" id="ingredient_input" rows="8" placeholder="1/2 | c | 150g | Sugar
+                <textarea class="form-control" name="ingredient_input" rows="8" placeholder="1/2 | c | 150g | Sugar
 1 | tsp | 7g | Cinnamon" required></textarea>
                 <div class="invalid-feedback">
                     Ingredients required
@@ -41,7 +41,7 @@
             </div>
             <div class="mb-3">
                 <label for="instruction_input" class="form-label">Instructions</label>
-                <textarea class="form-control" id="instruction_input" rows="8" placeholder="1. Preheat oven..
+                <textarea class="form-control" name="instruction_input" rows="8" placeholder="1. Preheat oven..
 2. Mix stuff..." required></textarea>
                 <div class="invalid-feedback">
                     Instructions required
@@ -63,15 +63,19 @@
             var forms = document.querySelectorAll('.needs-validation')
 
             // Loop over them and prevent submission
-            Array.prototype.slice.call(forms)
-            .forEach(function (form) {
+            Array.prototype.slice.call(forms).forEach(function (form) {
                 form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
+                    event.preventDefault();
+                    if (!form.checkValidity()) {
+                        event.stopPropagation();
+                    }
+                    else {
+                        $.post("/new_recipe", $("#new_recipe_form").serialize(), function(jsonData){
+                            console.log(jsonData);
+                        }, "json");
+                    }
 
-                form.classList.add('was-validated')
+                    form.classList.add('was-validated')
                 }, false)
             })
         })()

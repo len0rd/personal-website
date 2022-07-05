@@ -1,5 +1,6 @@
 const PORT = 8090;
 var express = require('express');
+var recipeTools = require('./recipe_generator');
 // formidable helps get JSON POST request content
 const formidable = require('express-formidable');
 var compile = require('es6-template-strings/compile'),
@@ -22,6 +23,7 @@ app.set('view engine', 'ejs');
 // add folder for static content:
 app.use(express.static(__dirname + '/assets'));
 
+// Get method for all pages
 app.get(/\/.*/, function (req, res) {
     let pathname = 'pages' + req.path;
     let page = pathname.substr(pathname.lastIndexOf('/') + 1);
@@ -63,7 +65,7 @@ function toCamelCase(str) {
 app.post("/new_recipe", function (req, res) {
     let dataIn = req.fields;
 
-    filename = recipeMarkdownDir + toCamelCase(dataIn.recipe_name_input) + ".md";
+    filename = toCamelCase(dataIn.recipe_name_input) + ".md";
     if (fs.existsSync(recipeMarkdownDir + filename)) {
         res.status(409).send(`Already have a recipe with name "${dataIn.recipe_name_input}"`);
         return;
@@ -79,7 +81,10 @@ app.post("/new_recipe", function (req, res) {
     dataIn.tags = formatted_tags
 
     formattedMarkdownRecipe = resolveToString(compiledRecipeTemplate, dataIn);
-    fs.writeFileSync(filename, formattedMarkdownRecipe, 'utf-8');
+    fs.writeFileSync(recipeMarkdownDir + filename, formattedMarkdownRecipe, 'utf-8');
+
+    recipeTools.generateRecipePartials(filename);
+    recipeTools.generateRecipeNavPartials()
 
     res.send('Successfully added!');
 });

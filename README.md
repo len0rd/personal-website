@@ -20,3 +20,7 @@ Its a website! Node/npm
 
 1. From this directory install dependencies with `npm install`
 2. Run the server with `npm start`
+
+## Build the docker image
+
+`docker build -t leo_website:latest .`

@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/projects.css">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header>
         <%- include('../partials/nav') %>
     </header>
@@ -32,6 +32,7 @@
         </div>
     </div>
 
+    <%- include('../partials/footer') %>
     <%- include('../partials/post_html_include') %>
     <script>
         const TAG_ACTIVE_CLASS = "btn-primary";

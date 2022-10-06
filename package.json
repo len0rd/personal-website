@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "node prestart.js"
+    "prestart": "./server_startup.sh"
   },
   "repository": {
     "type": "git",

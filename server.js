@@ -1,42 +1,35 @@
 const PORT = 8090;
 var express = require('express');
+const path = require("path");
 var app = express();
 
 console.log('Starting express server on port ' + PORT);
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
+app.set("views", path.join(__dirname, "views"));
 
 // add folder for static content:
-app.use(express.static(__dirname + '/assets'));
+app.use(express.static(path.join(__dirname, 'assets')));
 
-app.get(/\/.*/, function (req, res) {
-    let pathname = 'pages' + req.path;
-    let page = pathname.substr(pathname.lastIndexOf('/') + 1);
-
-    if (pathname !== null && pathname !== undefined) {
-        if ((pathname)[pathname.length - 1] === '/') {
-            pathname += 'index';
-            page = 'index';
-        }
-        if (pathname.includes('projects') && page !== 'index') {
-            // projects has a custom template that is used for all projects
-            // so we need to change the pathname that the renderer is using
-            // that template:
-            pathname = pathname.substr(0, pathname.lastIndexOf(page));
-            pathname += 'project_template'
-            // provide the pagename for project_template to use for main content
-            page = 'partials/md/projects/' + page;
-        }
-        else if (pathname.includes('recipes') && page !== 'index') {
-            pathname = pathname.substr(0, pathname.lastIndexOf(page));
-            pathname += 'recipe_template'
-            // provide the pagename for project_template to use for main content
-            page = 'partials/md/recipes/' + page;
-        }
+function getRootPage(req, res) {
+    let pageName = req.params["pageName"];
+    if (pageName === null || pageName === undefined) {
+        pageName = "index";
     }
-    console.log('request for path: ' + pathname + ', and page: ' + page);
+    res.render(path.join("pages", pageName));
+}
 
+app.get("/:pageName", getRootPage);
+app.get("/", getRootPage);
+
+app.get("/projects/:projectName", (req, res) => {
+    res.sendFile(req.params["projectName"], { root: path.join(__dirname, "assets", "projects") })
+});
+
+app.get("/recipes/:recipeName", (req, res) => {
+    let pathname = path.join("pages", "recipes", "recipe_template");
+    let page = path.join("partials", "md", "recipes", req.params["recipeName"])
     res.render(pathname, { "page": page });
 });
 

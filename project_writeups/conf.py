@@ -1,8 +1,9 @@
 # Sphinx docs configuration for building project documentation
 from datetime import datetime
+import sphinx_bootstrap_theme
 import os
 
-project = "Lenords Projects"
+project = "lenordsNet Projects"
 author = "lenord"
 copyright = f"{datetime.now().year}, lenordsNet"
 
@@ -12,10 +13,16 @@ extensions = [
 
 root_doc = "contents"
 
-html_theme = "sphinx_rtd_theme"
-html_additional_pages = {
-    "index": os.path.abspath(os.path.join("..", "views", "pages", "index.ejs"))
+html_theme = "bootstrap"
+html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+html_baseurl = "/"
+html_use_index = False
+html_theme_options = {
+    "navbar_title": "lenordsNet",
+    "navbar_sidebarrel": False,
+    "navbar_class": "navbar navbar-inverse navbar-dark",
+    "source_link_position": "footer",
+    "bootswatch_theme": "cyborg",
 }
-# html_static_path = ["_static"]
 
 pygments_style = "sas"

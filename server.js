@@ -17,7 +17,13 @@ function getRootPage(req, res) {
     if (pageName === null || pageName === undefined) {
         pageName = "index";
     }
-    res.render(path.join("pages", pageName));
+    // hardcoded check for favicon as it always comes in on /favicon.ico :/
+    if (req.path.includes("favicon")) {
+        res.sendFile(pageName, { root: path.join(__dirname, "assets", "img") });
+    }
+    else {
+        res.render(path.join("pages", pageName));
+    }
 }
 
 app.get("/:pageName", getRootPage);

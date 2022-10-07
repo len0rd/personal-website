@@ -9,8 +9,6 @@ const showdown = require('showdown'),
     showdownHighlight = require("showdown-highlight"),
     fs = require('fs'),
     mkdirp = require('mkdirp'),
-    projectInputDir = './project_writeups/',
-    projectOutputDir = './views/partials/md/projects/',
     recipeInputDir = './recipes/',
     recipeOutputDir = './views/partials/md/recipes/',
     recipeListGeneratedOutputDir = './views/partials/generated/',
@@ -46,37 +44,6 @@ const projectsAddHeaderClass = {
     type: 'output', // when it's triggered -> output is at the very end when text is html
     filter: text => { return addClassToTag(text, projectClassMap); }
 };
-
-// create Showdown converters
-const projectsConverter = new showdown.Converter({
-    extensions: [projectsAddHeaderClass, showdownHighlight],
-    tables: true
-});
-
-function convertMarkdownInDirWithShowdown(inputDir, outputDir, converter) {
-    // make the directory for the html output if necessary
-    mkdirp.sync(outputDir);
-    fs.readdir(inputDir, (err, files) => {
-        files.forEach(file => {
-            if (file.endsWith('.md')) {
-                let fileNameNoExtension = file.slice(0, -3);
-                console.log('converting: ' + fileNameNoExtension);
-                fs.readFile(inputDir + file, 'utf8', (err, data) => {
-                    if (err) {
-                        console.error(err);
-                    } else {
-                        let html = converter.makeHtml(data); // where the magic happens
-                        fs.writeFile(outputDir + fileNameNoExtension + '.ejs', html, 'utf8', (err) => {
-                            if (err) {
-                                console.error(err);
-                            }
-                        });
-                    }
-                });
-            }
-        });
-    });
-}
 
 function convertRecipeMarkdown(inputDir, outputDir) {
     var md = require('markdown-it')()
@@ -257,6 +224,5 @@ function generateRecipeNavigatorList(recipeSrcDir, generatedOutputDir) {
     });
 }
 
-convertMarkdownInDirWithShowdown(projectInputDir, projectOutputDir, projectsConverter);
 convertRecipeMarkdown(recipeInputDir, recipeOutputDir);
 generateRecipeNavigatorList(recipeInputDir, recipeListGeneratedOutputDir);

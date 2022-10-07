@@ -1,6 +1,9 @@
 lenordsNet project documentation
 ================================
 
+`Home <../../>`_
+----------------
+
 .. toctree::
     :maxdepth: 2
     :caption: Contents:

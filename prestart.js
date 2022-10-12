@@ -5,9 +5,7 @@
 // md changes), it is more efficient in
 // that we aren't converting MD -> ejs
 // on EVERY request
-const showdown = require('showdown'),
-    showdownHighlight = require("showdown-highlight"),
-    fs = require('fs'),
+const fs = require('fs'),
     mkdirp = require('mkdirp'),
     recipeInputDir = './recipes/',
     recipeOutputDir = './views/partials/md/recipes/',

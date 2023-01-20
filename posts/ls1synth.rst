@@ -3,6 +3,11 @@
 LS-1: Modular Synth
 ===================
 
+.. post:: 04, September 2018
+    :tags: audio, synthesizer, diy, breadboard
+    :category: Projects
+    :author: len0rd
+
 The LS-1 is a modular oscillator and sequencer, and includes 2 LFO’s (low-frequency oscillators), one external oscillator, and the oscillator attached to the sequencer. The sequencer itself is made up of a counter which acts as a LFO/clock divider, and dual muxes to select the feedback resistance and led to display. The counter outputs and mux select inputs have ports on the front-panel allowing the user to mix and match LFO divisions with mux selects, thus creating custom sequences.
 
 This build included a lot of firsts for me. This is the first time I’ve used Eagle to create a PCB/schematic (which should honestly be considered an atrocity given I am a Computer Engineering student), my first in creating a metal case using a water jet, and in general this is my first large-scale hobby project.

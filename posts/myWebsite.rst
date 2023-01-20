@@ -3,6 +3,11 @@
 My Website
 ==========
 
+.. post:: 31, July 2018
+    :tags: coding, diy, old
+    :category: Projects
+    :author: len0rd
+
 Starting out with this website, I had essentially no knowledge of modern web technologies. I knew that I wanted something modern but also easy to maintain that I could use well into the future.
 
 The end result is the site you see here. By no means perfect or beautiful, but functional and a place where I can store guides mainly for my benefit. But maybe for your benefit too? I certainly dont know who's reading this ¯\\\_(ツ)_/¯

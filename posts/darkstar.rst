@@ -3,6 +3,11 @@
 Darkstar Quadcopter
 ===================
 
+.. post:: 31, July 2018
+    :tags: drone, diy
+    :category: Projects
+    :author: len0rd
+
 The Darkstar is a RC quadcopter with the ability to fly autonomously through pre-designated waypoints, using advanced estimation techniques and object avoidance.
 
 At least that is the end-goal. Getting there however requires resources I simply do not have as a college student (read: money). Given such constraints, building an advance copter on the cheap sounded like a good challenge. Perhaps you can learn from my mistakes if you're interested in such a venture.

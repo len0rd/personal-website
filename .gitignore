@@ -1,5 +1,5 @@
 *.DS_STORE
-node_modules
-views/partials/md/
-views/partials/generated/
+_website/
 *.mp4
+.doctrees/
+__pycache__/

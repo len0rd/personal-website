@@ -3,6 +3,11 @@
 Pallet Desk
 ===========
 
+.. post:: 02, September 2018
+    :tags: furniture, diy, amateur, pallets
+    :category: Projects
+    :author: len0rd
+
 As I finished up my sophomore year at university, I realized that I needed my own desk. At that point I had lived in three different apartments. All 3 of them had desks provided, and all of those desks were mediocre at best, downright broken at worst. What's worse is at the time I worked from home, which meant I *needed* a reliable desk. With the summer about to hit, and plans to work full-time from home, I knew I needed something fast. Here's the end result:
 
 .. image:: ../assets/img/writeup/palletDesk/finished-1-sm.jpg

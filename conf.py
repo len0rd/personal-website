@@ -10,6 +10,7 @@ extensions = [
     "ablog",
     "sphinx.ext.intersphinx",
     "sphinx_design",
+    "sphinxcontrib.drawio",
 ]
 
 html_static_path = ["_static"]
@@ -26,34 +27,29 @@ fontawesome_included = True
 html_baseurl = blog_baseurl
 html_title = blog_title
 
-html_theme = "sphinx_book_theme"
+html_theme = "pydata_sphinx_theme"
 html_theme_options = {
-    "repository_url": "https://github.com/len0rd/",
     "search_bar_text": "search ...",
     "show_prev_next": False,
     "navbar_center": [],
-    "use_fullscreen_button": False,
-    "use_repository_button": True,
-    # "footer_items": ["copyright", "sphinx-version", x"last-updated"],
 }
 html_favicon = "assets/img/favicon.ico"
 
 html_sidebars = {
     "*": [
-        "sitename.html",
-        "search-field.html",
-        "recentposts.html",
-        "archives.html",
+        "ablog/recentposts.html",
+        "ablog/archives.html",
     ],
     "posts/**": [
-        "sitename.html",
-        "search-field.html",
-        "postcard.html",
-        "recentposts.html",
-        "archives.html",
+        "ablog/postcard.html",
+        "ablog/recentposts.html",
+        "ablog/archives.html",
     ],
 }
 
 html_context = {"html_title": html_title}
 
 pygments_style = "sas"
+
+drawio_headless = True
+drawio_no_sandbox = True

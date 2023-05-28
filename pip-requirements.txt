@@ -1,6 +1,6 @@
 sphinx
 ablog
 sphinx-design
-pydata_sphinx_theme
 sphinxcontrib-youtube
-sphinx-book-theme
+pydata-sphinx-theme
+sphinxcontrib-drawio

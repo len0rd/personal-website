@@ -24,8 +24,7 @@ ENV XVFB_DISPLAY ":42"
 FROM dev as prod
 
 # Bundle app source
-COPY . .
-RUN ablog build
-
+COPY . /website
+WORKDIR /website
 EXPOSE 8090
-CMD [ "ablog", "serve", "-p", "8090" ]
+CMD [ "./container_serve.sh" ]

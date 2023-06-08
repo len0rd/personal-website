@@ -13,7 +13,6 @@ extensions = [
     "sphinxcontrib.drawio",
 ]
 
-html_static_path = ["_static"]
 templates_path = ["_templates"]
 
 blog_baseurl = "https://lenord.me/"

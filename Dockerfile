@@ -1,4 +1,4 @@
-FROM python:3.11-bullseye
+FROM python:3.11-bullseye AS dev
 
 ADD pip-requirements.txt /tmp/pip-requirements.txt
 RUN pip install -r /tmp/pip-requirements.txt \
@@ -21,9 +21,11 @@ RUN apt update \
     && rm -rf drawio-amd64-${DRAWIO_VERSION}.deb
 ENV XVFB_DISPLAY ":42"
 
+FROM dev as prod
+
 # Bundle app source
-# COPY . .
-# RUN ablog build
+COPY . .
+RUN ablog build
 
 EXPOSE 8090
 CMD [ "ablog", "serve", "-p", "8090" ]

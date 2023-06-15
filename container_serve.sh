@@ -1,4 +1,4 @@
 #!/bin/bash
 
 ablog build
-ablog serve -p 8090
+python -m http.server -d /website/_website/ 8090

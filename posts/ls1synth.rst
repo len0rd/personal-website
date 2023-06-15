@@ -37,5 +37,3 @@ With the panel designed, I simply needed to export the sketch face to a format t
 
 With the metal sheet cut, I was ready to cut out the case with the water jet. My university charges for how much time you use a product, and since the case is not too large, this only cost me around $20. Putting the case portion of the project at ~$30 total! This was my first time using a water jet, so it was a very big deal for me. Computer Engineering is fun and all, but you don't get enough chances to play with big toys like other disciplines do.
 
-![Metal sheet cut and ready for the jet](/img/writeup/ls1synth/case-waterjet.mp4)
-

@@ -27,4 +27,4 @@ FROM dev as prod
 COPY . /website
 WORKDIR /website
 EXPOSE 8090
-CMD [ "./container_serve.sh" ]
+ENTRYPOINT [ "/bin/bash", "/website/container_serve.sh" ]

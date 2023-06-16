@@ -1,0 +1,6 @@
+sphinx
+ablog
+sphinx-design
+sphinxcontrib-youtube
+pydata-sphinx-theme
+sphinxcontrib-drawio

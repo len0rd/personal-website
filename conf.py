@@ -10,7 +10,6 @@ extensions = [
     "ablog",
     "sphinx.ext.intersphinx",
     "sphinx_design",
-    "sphinxcontrib.drawio",
 ]
 
 templates_path = ["_templates"]

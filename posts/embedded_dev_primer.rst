@@ -84,7 +84,7 @@ Making unit-testable code in embedded development can be challenging. There is a
 
 What does that look like? Something like this:
 
-.. drawio-image:: ../assets/diagrams/hal_concept.drawio
+.. image:: ../assets/diagrams/hal_concept.drawio.svg
 
 Notice all SOC/MCU-specific code is encapsulated down in a single library which we abstract out with an interface layer immediately.
 
@@ -107,7 +107,7 @@ What are "board-specifics"? This is the term I use to describe the configuration
 
 Here's an extension of the earlier diagram with these concepts added:
 
-.. drawio-image:: ../assets/diagrams/hal_concept_with_board.drawio
+.. image:: ../assets/diagrams/hal_concept_with_board.drawio.svg
 
 Benefits:
 

@@ -13,7 +13,7 @@ Setup Syncthing on arkos
 
 `Syncthing <https://syncthing.net/>`_ is a handy tool for syncronizing files between multiple machines. I currently use 2 devices for playing retro games: a Steam Deck and a `Anbernic RG353m <https://anbernic.com/products/rg353m>`_ running `arkos <https://github.com/christianhaitian/arkos>`_ My goal here is to syncronize save states and games between the devices. Here's my goal for a final setup:
 
-.. drawio-image:: ../assets/diagrams/syncthing_setup.drawio
+.. image:: ../assets/diagrams/syncthing_setup.drawio.svg
 
 
 For now, this writeup only covers RetroArch savestate syncing. There are also plenty of guides and advice online for setting up syncthing on the Steam Deck or a NAS, so the focus here will be ArkOS.

@@ -1,5 +1,8 @@
 # Sphinx docs configuration for building project documentation
 from datetime import datetime
+from pygments.lexer import RegexLexer, bygroups
+from pygments import token
+from sphinx.highlighting import lexers
 
 project = "lenordsNet"
 author = "lenord"
@@ -10,6 +13,7 @@ extensions = [
     "ablog",
     "sphinx.ext.intersphinx",
     "sphinx_design",
+    "sphinxcontrib.bitfield",
 ]
 
 templates_path = ["_templates"]
@@ -51,3 +55,74 @@ pygments_style = "sas"
 
 drawio_headless = True
 drawio_no_sandbox = True
+
+
+class CanbusDbcLexer(RegexLexer):
+    name = "DBC"
+
+    tokens = {
+        'root' : [
+            (r'[:\|\[\],\(\)]', token.Punctuation),
+            (r'[\@\-\+]', token.Operator),
+            ("CM_", token.Keyword, 'comment'),
+            ("SG_", token.Keyword, "signal"),
+            ("BO_", token.Keyword, 'msg'),
+            ("BA_DEF_DEF_", token.Keyword, 'attrdefault'),
+            ("BA_DEF_", token.Keyword, 'attrdef'),
+            ('BA_', token.Keyword, 'sigdefault')
+        ],
+        'msg': [
+            (r'(\s+)(\d+)(\s+)([\w_]+)(\s*?)(:)(\s+)(\d+)(\s+)(\w+)',
+                bygroups(token.Whitespace, token.Number, token.Whitespace, token.Name, token.Whitespace, token.Punctuation, token.Whitespace, token.Number, token.Whitespace, token.Name)),
+        ],
+        'signal': [
+            (r'(\s+)([\w_]+)(\s+)(:)(\s+)(\d+)(\|)(\d+)(@)(\d+)([+-])(\s+)(\()([-\d\.]+)(,)([-\d\.]+)(\))(\s+)(\[)([\d-]+)(\|)([\d-]+)(\])(\s+)(".*?")(.*?\n)', 
+                bygroups(token.Whitespace,
+                token.Name,
+                token.Whitespace,
+                token.Punctuation,
+                token.Whitespace,
+                token.Number,
+                token.Punctuation,
+                token.Number,
+                token.Punctuation,
+                token.Number,
+                token.Punctuation,
+                token.Whitespace,
+                token.Punctuation,
+                token.Number,
+                token.Punctuation,
+                token.Number,
+                token.Punctuation,
+                token.Whitespace,
+                token.Punctuation,
+                token.Number,
+                token.Punctuation,
+                token.Number,
+                token.Punctuation,
+                token.Whitespace,
+                token.String,
+                token.Name,
+            )),
+        ],
+        'comment': [
+            (r'(\s+)(BO_)(\s+)(\d+)(\s+)(".*?")(;)',
+                bygroups(token.Whitespace, token.Keyword, token.Whitespace, token.Number, token.Whitespace, token.String, token.Punctuation)),
+            (r'(\s+)(SG_)(\s+)(\d+)(\s+)(\w+)(\s+)(".*?")(;)',
+                bygroups(token.Whitespace, token.Keyword, token.Whitespace, token.Number, token.Whitespace, token.Name, token.Whitespace, token.String, token.Punctuation))
+        ],
+        'attrdef': [
+            (r'(\s+)([\w_]+)(\s+)(".*?")(\s+)(\w+)(\s+)(.*?)(;)',
+                bygroups(token.Whitespace, token.Keyword, token.Whitespace, token.String, token.Whitespace, token.Keyword, token.Whitespace, token.Name, token.Punctuation))
+        ],
+        'attrdefault': [
+            (r'(\s+)(".*?")(\s+)(.*?)(;)',
+                bygroups(token.Whitespace, token.String, token.Whitespace, token.Name, token.Punctuation))
+        ],
+        'sigdefault': [
+            (r'(\s+)(".*?")(\s+)(SG_)(\s+)(\d+)(\s+)(\S+)(\s+)([0-9\-\.]+)(;)',
+                bygroups(token.Whitespace, token.String, token.Whitespace, token.Keyword, token.Whitespace, token.Number, token.Whitespace, token.Name, token.Whitespace, token.Number, token.Punctuation))
+        ],
+    }
+
+lexers['dbc'] = CanbusDbcLexer(startinline=True)

@@ -4,7 +4,7 @@ Defining CANBus messages with a DBC file
 ========================================
  
 .. post:: 03, December 2024
-   :tags: embedded, development, toolchain,
+   :tags: embedded, development, toolchain
    :category: Projects
    :author: len0rd
 

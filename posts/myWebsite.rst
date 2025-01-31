@@ -1,12 +1,17 @@
 .. myWebsite:
 
-My Website
-==========
+My Website [Old]
+================
 
 .. post:: 31, July 2018
     :tags: coding, diy, old
     :category: Projects
     :author: len0rd
+
+.. note::
+
+   This page describes how I initially implemented this website back in 2018. I've since moved to a much
+   simpler solution using `Sphinx Docs <https://www.sphinx-doc.org/en/master/>`_ and `ablog <https://ablog.readthedocs.io/en/stable/>`_
 
 Starting out with this website, I had essentially no knowledge of modern web technologies. I knew that I wanted something modern but also easy to maintain that I could use well into the future.
 
@@ -32,12 +37,8 @@ Express
 
 Originally I started this site as a pure html/bootstrap affair. This worked for all of 2 days until I got sick of copying and pasting code all over the place. While I had no desire to maintain duplicate copies of code, I was even less interested in using some massive overkill framework (as an embedded dev, I have a need for speed). Low and behold: ExpressJS! The perfect minimal framework solution for my problem. Express has a concept of 'pages' and 'partials'. A page defines the overall structure of a static webpage (say my home page). Partials define chunks/components of that page that are shared in other locations. So for example, all the html for my navigation/ header bar has its own partial, as does the footer. Then in a page, to use this content you can simply add a ``<% include`` as if you were writing a C program! Express was speaking my language.
 
-Static Project Pages [old]
---------------------------
-
-.. note::
-
-    I've replaced this implementation with Sphinx docs
+Static Project Pages
+--------------------
 
 The bulk of the effort for me was sunk into generating the project writeup pages (like the page you're reading this off of right now!). I wanted them to be simple static text, images and video. But I didn't want the complexity of using a whole framework like wordpress, and I definitely wasn't into the idea of writting everything in html. I wanted my writeups to be in a portable format I could easily migrate or use in other places in the future.
 

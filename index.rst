@@ -7,7 +7,7 @@ Recent Posts
     :titlesonly:
     :hidden:
 
-.. postlist:: 10
+.. postlist::
    :author: len0rd
    :date: %Y-%m-%d
    :format: {date} - {title}

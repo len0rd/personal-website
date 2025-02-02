@@ -1,8 +1,8 @@
 Docker for SW Development
 =========================
 
-.. post:: 31, January 2025
-   :tags: development, infrastructure, tools, lunch-n-learn 
+.. post:: 01, February 2025
+   :tags: development, infrastructure, tools, lunch-n-learn
    :category: Projects
    :author: len0rd
 
@@ -33,7 +33,7 @@ Why docker?
 
 - documented and repeatable dependency installation in a living (version-controlled) file
 
-- "containerize once and run everywhere" 
+- "containerize once and run everywhere"
 
   - No more "it works on my machine"
 
@@ -161,7 +161,7 @@ DevContainers: an additional layer on top of docker
 
   - https://containers.dev/
 
-- Now multiple IDEs (IntelliJ, Visual Studio, NeoVim) have support for the standard 
+- Now multiple IDEs (IntelliJ, Visual Studio, NeoVim) have support for the standard
 
 .. image:: https://code.visualstudio.com/assets/docs/devcontainers/containers/architecture-containers.png
     :class: dark-light

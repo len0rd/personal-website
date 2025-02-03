@@ -37,10 +37,23 @@ html_theme_options = {
 }
 html_favicon = "assets/img/favicon.ico"
 
+html_extra_path = [
+    "assets/img/me.png",
+]
+
+html_static_path = [
+    "_static",
+]
+
+html_css_files = [
+    "customizations.css",
+]
+
 html_sidebars = {
     "*": [
         "ablog/recentposts.html",
         "ablog/archives.html",
+        "aboutme.html",
     ],
     "posts/**": [
         "ablog/postcard.html",

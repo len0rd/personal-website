@@ -7,6 +7,7 @@ LS-1: Modular Synth
     :tags: audio, synthesizer, diy, breadboard
     :category: Projects
     :author: len0rd
+    :blogpost: false
 
 The LS-1 is a modular oscillator and sequencer, and includes 2 LFO’s (low-frequency oscillators), one external oscillator, and the oscillator attached to the sequencer. The sequencer itself is made up of a counter which acts as a LFO/clock divider, and dual muxes to select the feedback resistance and led to display. The counter outputs and mux select inputs have ports on the front-panel allowing the user to mix and match LFO divisions with mux selects, thus creating custom sequences.
 

@@ -10,7 +10,7 @@ Embedded Development Primer
 
 This post is meant to be an overview of some principles and practices I have found helpful for professional baremetal embedded development. This is meant for people who want to have total control over their embedded development environment and codebase.
 
-Tools like `platformio <https://platformio.org/>`_ are excellent and can help us get projects off the ground but are perhaps a little opaque when it comes to toolchain and dependency management. In a professional setting, I often find I need total control over toolchains and dependencies down to the lowest-level. Learning how to intelligently manage these tools in a modern way has been a major effort in my career so far. This post will serve as a collection of my thoughts and lessons-learned from building multiple embedded projects from the ground up.
+Tools like `platformio <https://platformio.org/>`_ are excellent and can help us get projects off the ground but are perhaps a little opaque when it comes to toolchain and dependency management. In a professional setting, I often find I need control over toolchains and dependencies down to the lowest-level. Learning how to intelligently manage these tools in a modern way has been a major effort in my career so far. This post will serve as a collection of my thoughts and lessons-learned after building multiple embedded projects from the ground up.
 
 Lesson 1: Docker for toolchain management
 -----------------------------------------

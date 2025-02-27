@@ -72,8 +72,9 @@ class CanbusDbcLexer(RegexLexer):
 
     tokens = {
         "root": [
-            (r"[:\|\[\],\(\)]", token.Punctuation),
+            (r"[:\|\[\],\(\);f]", token.Punctuation),
             (r"[\@\-\+]", token.Operator),
+            (r'"[\S\s]*?"', token.String),
             ("CM_", token.Keyword, "comment"),
             ("SG_", token.Keyword, "signal"),
             ("BO_", token.Keyword, "msg"),
@@ -133,19 +134,17 @@ class CanbusDbcLexer(RegexLexer):
         ],
         "comment": [
             (
-                r'(\s+)(BO_)(\s+)(\d+)(\s+)(".*?")(;)',
+                r'(\s+)(BO_)(\s+)(\d+)(\s+)',
                 bygroups(
                     token.Whitespace,
                     token.Keyword,
                     token.Whitespace,
                     token.Number,
                     token.Whitespace,
-                    token.String,
-                    token.Punctuation,
                 ),
             ),
             (
-                r'(\s+)(SG_)(\s+)(\d+)(\s+)(\w+)(\s+)(".*?")(;)',
+                r'(\s+)(SG_)(\s+)(\d+)(\s+)(\w+)(\s+)',
                 bygroups(
                     token.Whitespace,
                     token.Keyword,
@@ -154,8 +153,6 @@ class CanbusDbcLexer(RegexLexer):
                     token.Whitespace,
                     token.Name,
                     token.Whitespace,
-                    token.String,
-                    token.Punctuation,
                 ),
             ),
         ],

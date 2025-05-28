@@ -58,17 +58,18 @@ Given the above message definition, the CAN payload will look like this:
     :vspace: 192
     :fontfamily: monospace
     :caption: TEMPERATURE_RH bitmap
+    :fontcolor: grey
 
     [
-        { "name": "TMPD", "rotate": "-90", "bits": 1, "type": 1},
-        { "name": "RHD", "rotate": "-90", "bits": 1, "type": 1},
-        { "name": "FLT1", "rotate": "-90", "bits": 1, "type": 1},
-        { "name": "FLT2", "rotate": "-90", "bits": 1, "type": 1},
+        { "name": "TMPD", "rotate": "-90", "bits": 1},
+        { "name": "RHD", "rotate": "-90", "bits": 1},
+        { "name": "FLT1", "rotate": "-90", "bits": 1},
+        { "name": "FLT2", "rotate": "-90", "bits": 1},
         { "name": "reserved",  "bits": 12, "type": 5},
-        { "name": "TEMP1",  "bits": 16, "type": 1},
-        { "name": "TEMP2",  "bits": 16, "type": 1},
-        { "name": "RH1",  "bits": 8, "type": 1},
-        { "name": "RH2",  "bits": 8, "type": 1}
+        { "name": "TEMP1",  "bits": 16},
+        { "name": "TEMP2",  "bits": 16},
+        { "name": "RH1",  "bits": 8},
+        { "name": "RH2",  "bits": 8}
     ]
 
 And here's one way it could look in a C++ struct representation:

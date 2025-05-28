@@ -49,6 +49,10 @@ html_css_files = [
     "customizations.css",
 ]
 
+html_js_files = [
+    "update_title.js",
+]
+
 html_sidebars = {
     "*": [
         "ablog/recentposts.html",

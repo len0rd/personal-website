@@ -3,8 +3,6 @@ ablog
 sphinx-design
 sphinxcontrib-youtube
 pydata-sphinx-theme
-# dependency of sphinxcontrib-bitfield
-https://github.com/len0rd/bitfield/archive/refs/heads/feature/len0rd/fontcolor.zip
 # for bitfield diagram generation (with latex support)
 # installing from my own branch since some improvements have not been merged upstream yet
 https://github.com/len0rd/sphinxcontrib-bitfield/archive/refs/heads/feature/len0rd/bitfield_fontcolor.zip

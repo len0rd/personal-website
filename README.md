@@ -11,7 +11,7 @@ Its a website! Sphinx + ablog
 
 ## Run the production container
 
-`docker run --rm -td -p 8888:8090 --name=leo_website leo_website:latest`
+`docker run --rm -td -p 9999:8090 --name=leo_website leo_website:latest`
 
 ## Colors of the rainbow
 

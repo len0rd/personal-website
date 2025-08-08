@@ -3,7 +3,7 @@ Docker for SW Development
 
 .. post:: 01, February 2025
    :tags: development, infrastructure, tools, lunch-n-learn
-   :category: Projects
+   :category: Dev
    :author: len0rd
 
 This is from a lunch-n-learn I hosted which aimed to showcase the features and advantages of using

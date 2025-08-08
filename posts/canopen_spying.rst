@@ -4,7 +4,7 @@ Spying on a CANOpen bus
 
 .. post:: 13, December 2024
    :tags: embedded, development
-   :category: Projects
+   :category: Dev
    :author: len0rd
 
 `CANOpen <https://en.wikipedia.org/wiki/CANopen>`_ is a protocol stack that sits on top of a normal CANBus.

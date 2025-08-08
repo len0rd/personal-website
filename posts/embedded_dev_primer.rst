@@ -5,7 +5,7 @@ Embedded Development Primer
 
 .. post:: 05, January 2023
     :tags: diy, docker, embedded, development, toolchain, advice
-    :category: Projects
+    :category: Dev
     :author: len0rd
 
 This post is meant to be an overview of some principles and practices I have found helpful for professional baremetal embedded development. This is meant for people who want to have total control over their embedded development environment and codebase.

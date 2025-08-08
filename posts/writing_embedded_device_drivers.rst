@@ -8,7 +8,7 @@ Writing Embedded Device Drivers
 
 .. post:: 27, May 2025
     :tags: embedded, development, advice
-    :category: Projects
+    :category: Dev
     :author: len0rd
 
 In this post I wanted to quickly describe some of the guiding principles I follow when writing device drivers in C++ for an embedded project. By "device driver" I mean the code that provides an interface between your application and some hardware device on an embedded system. For instance: an IMU, a temperature sensor, an ADC sensor, a motor controller, etc.

@@ -5,7 +5,7 @@ Release Versioning In C/C++ Projects
 
 .. post:: 10, June 2025
     :tags: diy, docker, embedded, development, advice
-    :category: Projects
+    :category: Dev
     :author: len0rd
 
 

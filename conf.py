@@ -1,12 +1,13 @@
 # Sphinx docs configuration for building project documentation
 from datetime import datetime
-from pygments.lexer import RegexLexer, bygroups
+
 from pygments import token
+from pygments.lexer import RegexLexer, bygroups
 from sphinx.highlighting import lexers
 
 project = "lenordsNet"
 author = "lenord"
-copyright = f"{datetime.now().year}, lenordsNet"
+copyright = f"{datetime.now().year}, lenord.net"
 
 extensions = [
     "sphinxcontrib.youtube",
@@ -29,11 +30,16 @@ fontawesome_included = True
 html_baseurl = blog_baseurl
 html_title = blog_title
 
+html_show_sourcelink = False
 html_theme = "pydata_sphinx_theme"
 html_theme_options = {
     "search_bar_text": "search ...",
     "show_prev_next": False,
     "navbar_center": [],
+    "show_source_link": False,
+    "secondary_sidebar_items": [],
+    "pygments_light_style": "lightbulb",
+    "pygments_dark_style": "lightbulb",
 }
 html_favicon = "assets/img/favicon.ico"
 
@@ -55,20 +61,18 @@ html_js_files = [
 
 html_sidebars = {
     "*": [
-        "ablog/recentposts.html",
-        "ablog/archives.html",
         "aboutme.html",
     ],
     "posts/**": [
         "ablog/postcard.html",
-        "ablog/recentposts.html",
-        "ablog/archives.html",
+        "page-toc",
     ],
 }
 
-html_context = {"html_title": html_title}
-
-pygments_style = "sas"
+html_context = {
+    "html_title": html_title,
+    "default_mode": "dark",
+}
 
 
 class CanbusDbcLexer(RegexLexer):
@@ -138,7 +142,7 @@ class CanbusDbcLexer(RegexLexer):
         ],
         "comment": [
             (
-                r'(\s+)(BO_)(\s+)(\d+)(\s+)',
+                r"(\s+)(BO_)(\s+)(\d+)(\s+)",
                 bygroups(
                     token.Whitespace,
                     token.Keyword,
@@ -148,7 +152,7 @@ class CanbusDbcLexer(RegexLexer):
                 ),
             ),
             (
-                r'(\s+)(SG_)(\s+)(\d+)(\s+)(\w+)(\s+)',
+                r"(\s+)(SG_)(\s+)(\d+)(\s+)(\w+)(\s+)",
                 bygroups(
                     token.Whitespace,
                     token.Keyword,

@@ -23,3 +23,35 @@
     align-items: center;
     justify-content: center;
 }
+
+html[data-theme="dark"] {
+    --pst-color-background: #060606;
+    --pst-color-primary: #4caf82;
+    --pst-color-surface: #0f0f0f;
+    --pst-color-on-background: #0f0f0f;
+    --pst-color-target: #1a3d2e;
+    --pst-color-accent: #6dcf9e;
+    --pst-color-link-hover: #6dcf9e;
+}
+
+html[data-theme="dark"] .bd-header {
+    background-color: #2a6b4d !important;
+}
+
+div.highlight,
+div.highlight pre,
+.admonition {
+    border-radius: 0.8rem;
+}
+
+.navbar-header-items__end {
+    margin-left: auto;
+}
+
+html[data-theme="dark"] .headerlink {
+    color: #4caf82;
+}
+
+html[data-theme="dark"] #pst-back-to-top {
+    background-color: #4caf82;
+}

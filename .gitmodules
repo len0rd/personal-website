@@ -1,0 +1,3 @@
+[submodule "extern/rail_diagram"]
+	path = extern/rail_diagram
+	url = ../rail_diagram

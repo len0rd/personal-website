@@ -1,5 +1,7 @@
 # Sphinx docs configuration for building project documentation
 from datetime import datetime
+from pathlib import Path
+import shutil
 
 from pygments import token
 from pygments.lexer import RegexLexer, bygroups
@@ -214,3 +216,30 @@ class CanbusDbcLexer(RegexLexer):
 
 
 lexers["dbc"] = CanbusDbcLexer(startinline=True)
+
+
+def copy_rail_diagram(app, exception):
+    if exception is not None:
+        return
+
+    project_root = Path(__file__).parent
+    rail_diagram_dir = project_root / "extern" / "rail_diagram"
+    output_rail_dir = Path(app.outdir) / "rail"
+    output_rail_dir.mkdir(parents=True, exist_ok=True)
+
+    shutil.copy2(
+        rail_diagram_dir / "railroad_diagram.html",
+        output_rail_dir / "index.html",
+    )
+    shutil.copy2(
+        rail_diagram_dir / "railroad_app.js",
+        output_rail_dir / "railroad_app.js",
+    )
+    shutil.copy2(
+        rail_diagram_dir / "railroad_data.js",
+        output_rail_dir / "railroad_data.js",
+    )
+
+
+def setup(app):
+    app.connect("build-finished", copy_rail_diagram)
